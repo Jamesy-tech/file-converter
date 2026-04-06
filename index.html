@@ -120,6 +120,36 @@
   <img src="shapes.png" class="window" style="position: fixed; bottom: 25px; left: 27px; width: 30px; height: 30px; cursor: pointer;" onclick="window.location.href = 'https://jamesy-tech.github.io/jamesy-creator';">
 
 <script>
+
+
+        const user = localStorage.getItem("username");
+
+if (!user || user.toLowerCase() === "guest") {
+  window.location.href = "https://jamesy-tech.github.io/jamesy-creator/Jamesy%20Creator/login.html";
+}
+
+function lock() {
+    const choice = confirm("Lock account? You can log back in again by using your password.")
+    if (choice) {
+    window.location.href = 'https://jamesy-tech.github.io/jamesy-creator/Jamesy%20Creator/loginback.html?path=lock';
+    }
+}
+
+            document.addEventListener('keydown', function(event) {
+    if (event.ctrlKey && event.key === 'q') {
+        lock()
+    }
+});
+
+if (localStorage.getItem('locked') === 'true') {
+  window.location.href = 'https://jamesy-tech.github.io/jamesy-creator/Jamesy%20Creator/loginback.html?path=lock';
+}
+
+if (!localStorage.getItem("userPassword")) {
+    window.location.href = "https://jamesy-tech.github.io/jamesy-creator/Jamesy%20Creator/login.html";
+  }
+
+  
     const fileInput = document.getElementById('fileInput');
     const fileList = document.getElementById('fileList');
     const convertBtn = document.getElementById('convertBtn');
