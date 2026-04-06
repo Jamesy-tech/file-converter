@@ -78,12 +78,25 @@
         }
         .round-btn:hover { border-color: var(--text-main); color: var(--text-main); }
         .status-tag { font-size: 11px; font-weight: 700; color: var(--accent); text-transform: uppercase; }
+
+        @media (max-width:800px) {
+            .actualtitle {
+                display:none;
+            }
+        }
+
+                @media (max-width:500px) {
+            .actualmore {
+                display:none;
+            }
+        }
+
     </style>
 </head>
 <body>
 
 <header>
-    <div class="brand" onclick="window.location.reload()"><div class="logo-mark"></div> File Converter</div>
+    <div class="brand" onclick="window.location.reload()"><div class="logo-mark"></div> <span class="actualtitle">File Converter</span></div>
     <div class="transport">
         <button class="pill-btn" onclick="document.getElementById('fileInput').click()">
             <svg class="icon" viewBox="0 0 24 24"><path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"/></svg> Add Media
@@ -92,7 +105,7 @@
             <svg class="icon" viewBox="0 0 24 24"><path d="M16 1l-4 4h9v2H12l4 4-1.41 1.41L9.17 7H1v10h22V1h-7z"/></svg> Convert All
         </button>
     </div>
-    <button class="pill-btn" style="background:#eee" onclick="window.top.location.href = 'https://jamesy-tech.github.io/jamesy-creator';">More tools</button>
+    <button class="pill-btn actualmore" style="background:#eee" onclick="window.top.location.href = 'https://jamesy-tech.github.io/jamesy-creator';">More tools</button>
 </header>
 
 <main>
